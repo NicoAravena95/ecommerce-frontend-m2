@@ -190,9 +190,42 @@ if (document.getElementById('btn-finalizar')) {
     document.getElementById('btn-finalizar').addEventListener('click', finalizarCompra);
 }
 
+// Función para cargar descripción del producto
+function cargarDescripcionProducto() {
+    // Obtener el ID del producto de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productoId = parseInt(urlParams.get('id'));
+
+    // Buscar el producto en el array
+    const producto = productos.find(p => p.id === productoId);
+
+    if (producto) {
+        // Mostrar información del producto
+        document.getElementById('producto-imagen').src = producto.Imagen;
+        document.getElementById('producto-imagen').alt = producto.nombre;
+        document.getElementById('producto-nombre').textContent = producto.nombre;
+        document.getElementById('producto-descripcion').textContent = producto.descripcion;
+        document.getElementById('producto-precio').textContent = `$${producto.precio.toLocaleString('es-CL')}`;
+
+        // Configurar botón de agregar al carrito
+        document.getElementById('btn-agregar-carrito').addEventListener('click', function() {
+            agregarAlCarrito(productoId);
+            document.getElementById('cantidad-producto').value = 1;
+        });
+    } else {
+        // Si no se encuentra el producto, redirigir al inicio
+        window.location.href = '../../index.html';
+    }
+}
+
 // Mostrar productos solo si existe el contenedor
 if (contenedorProductos) {
     mostrarProductos();
+}
+
+// Cargar descripción si estamos en la página de descripción
+if (document.getElementById('producto-nombre')) {
+    cargarDescripcionProducto();
 }
 
 // Actualizar carrito siempre

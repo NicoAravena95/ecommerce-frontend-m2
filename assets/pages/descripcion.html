@@ -143,33 +143,6 @@
     </footer>
 
     <script src="../../assets/js/script.js"></script>
-    <script>
-        // Obtener el ID del producto de la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const productoId = parseInt(urlParams.get('id'));
-
-        // Buscar el producto en el array
-        const producto = productos.find(p => p.id === productoId);
-
-        if (producto) {
-            // Mostrar información del producto
-            document.getElementById('producto-imagen').src = producto.Imagen;
-            document.getElementById('producto-imagen').alt = producto.nombre;
-            document.getElementById('producto-nombre').textContent = producto.nombre;
-            document.getElementById('producto-descripcion').textContent = producto.descripcion;
-            document.getElementById('producto-precio').textContent = `$${producto.precio.toLocaleString('es-CL')}`;
-
-            // Configurar botón de agregar al carrito
-            document.getElementById('btn-agregar-carrito').addEventListener('click', function() {
-                const cantidad = parseInt(document.getElementById('cantidad-producto').value);
-                agregarAlCarrito(productoId);
-                document.getElementById('cantidad-producto').value = 1;
-            });
-        } else {
-            // Si no se encuentra el producto, redirigir al inicio
-            window.location.href = '../../index.html';
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
