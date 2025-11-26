@@ -1,11 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce</title>
+    <title>Ecommerce - La Cosecha</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
+
 <body>
-    
+    <!-- Navbar -->
+    <header>
+    <nav class="navbar navbar-expand-lg" style="background-color: #2E7D32;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" alt="Logo" width="100" height="50"
+                    class="d-inline-block align-text-top my-2 ms-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" style="font-weight: bold; font-size: large;">
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="assets/pages/contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-light ms-2" data-bs-toggle="offcanvas"
+                            data-bs-target="#carritoOffcanvas">
+                            <i class="bi bi-cart"></i> Carrito
+                            <span class="badge" id="carrito-badge" style="background-color: #2E7D32;">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <main>
+    <!-- Banner -->
+    <section class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+                <img src="assets/img/banner.png" alt="Banner" class="img-fluid hero-img">
+            </div>
+            <div class="col-md-6">
+                <h1 class="fw-bold mb-3">Nuestros Productos</h1>
+                <p class="lead mb-4">
+                    Explora nuestra variedad de productos frescos y de alta calidad directamente desde el campo.
+                </p>
+                <a href="#productos" class="btn btn-success btn-lg px-4">Ver Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Título de productos -->
+    <section class="container text-center my-5 py-5" id="productos">
+        <h2 class="fw-bold">Productos Destacados</h2>
+        <p class="lead">Descubre nuestros productos más populares y frescos.</p>
+
+    <!-- Sección Productos -->
+    <div class="container mb-5">
+        <div id="contenedor-productos" class="row"></div>
+    </div>
+    </section>
+
+    <!-- Offcanvas Carrito -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffcanvas" aria-labelledby="carritoOffcanvasLabel">
+        <div class="offcanvas-header" style="background-color: #2E7D32;">
+            <h5 class="offcanvas-title text-white" id="carritoOffcanvasLabel">
+                <i class="bi bi-cart3 me-2"></i> Mi Carrito
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div id="carrito-items" class="p-3">
+                <p class="text-center text-muted py-5">Tu carrito está vacío</p>
+            </div>
+            <div class="p-3 border-top bg-light mt-auto">
+                <div class="d-flex justify-content-between mb-3">
+                    <strong>Total:</strong>
+                    <strong class="text-success fs-5" id="carrito-total">$0</strong>
+                </div>
+                <button class="btn btn-success w-100 mb-2" id="btn-finalizar">Finalizar Compra</button>
+                <button class="btn btn-outline-danger w-100" id="btn-vaciar">Vaciar Carrito</button>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white mt-5" style="background-color: #2E7D32;">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <img src="assets/img/logo.png" alt="Logo" width="150" height="75"
+                        class="d-inline-block align-text-top mb-2">
+                    <p>
+                        La Cosecha es tu tienda en línea de confianza para productos frescos y de calidad directamente
+                        del campo a tu mesa.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Enlaces</h5>
+                    <ul class=" mb-0">
+                        <li>
+                            <a href="#" class="text-white">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#productos" class="text-white">Productos</a>
+                        </li>
+                        <li>
+                            <a href="assets/pages/contacto.html" class="text-white">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contacto</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <p class="text-white">lacosecha@contacto.cl</p>
+                        </li>
+                         <li>+569 92920011</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="text-center p-3">
+                © 2024 Copyright:
+                <a class="text-white" href="#">lacosecha.cl</a>
+            </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
