@@ -2,6 +2,11 @@
 
 Proyecto de e-commerce para venta de frutas y verduras frescas.
 
+<p align="center">
+  <img src="https://res.cloudinary.com/dqzwqkgzr/image/upload/v1764277395/ChatGPT_Image_26_nov_2025_02_41_41_kotwsi.png" width="250" alt="Logo La Cosecha" />
+</p>
+
+
 ## Sobre el Proyecto
 
 Este es un sitio web de tienda online desarrollado como proyecto del Módulo 2 - Bootcamp Full Stack Python . Vende frutas y verduras frescas con un carrito de compras funcional.
